@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính tổng và hiển thị</title>
+</head>
+<body>
+    <label for="input1">Nhập số 1:</label>
+    <input type="number" id="input1" oninput="calculateSum()">
+    <label for="input2">Nhập số 2:</label>
+    <input type="number" id="input2" oninput="calculateSum()">
+    
+    <label for="sumResult1">Tổng (cách 1):</label>
+    <input type="text" id="sumResult1" readonly>
+    <hr>
+    <label for="input3">Nhập số 3:</label>
+    <input type="number" id="input3" oninput="calculateSum2()">
+    <label for="sumResult2">Tổng (cách 2):</label>
+    <input type="text" id="sumResult2" readonly>
+    <script>
+        function calculateSum() {
+            let input1 = parseFloat(document.getElementById('input1').value) || 0;
+            let input2 = parseFloat(document.getElementById('input2').value) || 0;
+            let sumResult1 = document.getElementById('sumResult1');
+            sumResult1.value = input1 + input2;
+        }
+        function calculateSum2() {
+            let input1 = parseFloat(document.getElementById('input1').value) || 0;
+            let input3 = parseFloat(document.getElementById('input3').value) || 0;
+            let sumResult2 = document.getElementById('sumResult2');
+            sumResult2.value = input1 + input3;
+        }
+    </script>
+</body>
+</html>

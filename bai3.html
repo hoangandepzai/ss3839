@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiển thị nội dung từ ô input</title>
+</head>
+<body>
+    <label for="userInput">Nhập nội dung:</label>
+    <input type="text" id="userInput" oninput="updateDiv1(this.value)">
+    <div id="outputDiv1">Nội dung từ input sẽ được hiển thị ở đây (cách 1)</div>
+    <hr>
+    <label for="userInput2">Nhập nội dung:</label>
+    <input type="text" id="userInput2" oninput="updateDiv2()">
+    <div id="outputDiv2">Nội dung từ input sẽ được hiển thị ở đây (cách 2)</div>
+    <script>
+        function updateDiv1(value) {
+            let outputDiv1 = document.getElementById('outputDiv1');
+            outputDiv1.textContent = 'Nội dung từ input (cách 1): ' + value;
+        }        function updateDiv2() {
+            let userInput2 = document.getElementById('userInput2');
+            let outputDiv2 = document.getElementById('outputDiv2');
+            outputDiv2.textContent = 'Nội dung từ input (cách 2): ' + userInput2.value;
+        }
+    </script>
+</body>
+</html>

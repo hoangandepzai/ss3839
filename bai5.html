@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thêm phần tử vào danh sách</title>
+</head>
+<body>
+    <div>
+        <h1>Create New Item</h1>
+        <label for="newItem">Item:</label>
+        <input type="text" id="newItem" oninput="changeBackgroundColor()" />
+        <button onclick="addItem()">Add</button>
+    </div>
+    <ul id="itemList"></ul>
+    <script>
+        function changeBackgroundColor() {
+            let input = document.getElementById('newItem');
+            input.style.backgroundColor = input.value.trim() !== '' ? 'white' : 'yellow';
+        }
+        function addItem() {
+            let input = document.getElementById('newItem');
+            let itemList = document.getElementById('itemList');
+            let inputValue = input.value.trim();
+            if (inputValue !== '') {
+                let newItem = document.createElement('li');
+                newItem.textContent = inputValue;
+                itemList.appendChild(newItem);
+                input.value = '';
+                input.style.backgroundColor = 'yellow';
+            }
+        }
+    </script>
+</body>
+</html>

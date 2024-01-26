@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thay đổi nội dung nút</title>
+</head>
+<body>
+    <button id="myButton" onclick="changeButtonText()">OFF</button>
+    <script>
+        function changeButtonText() {
+            let button = document.getElementById('myButton');
+            if (button.textContent === 'OFF') {
+                button.textContent = 'ON';
+            } else {
+                button.textContent = 'OFF';
+            }
+        }
+    </script>
+</body>
+</html>
